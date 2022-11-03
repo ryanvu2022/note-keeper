@@ -36,17 +36,5 @@ export const deleteNote = async (req, res) => {
    res.json({ message: "Note deleted successfully" });
 }
 
-export const updateNote = async (req, res) => {
-   const { id: _id } = req.params;
-   const note = req.body;
-
-   if (!mongoose.Types.ObjectId.isValid(_id)) {
-      return res.status(404).send("No note with that id.");
-   }
-
-   const updatedNote = await Note.findByIdAndUpdate(_id, {...note, _id}, { new: true });
-
-   res.json(updatedNote);
-}
 
 
