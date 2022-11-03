@@ -15,7 +15,7 @@ app.use(cors());
 app.use("/notes", router);
 
 app.get('/', (req, res) => {
-   res.send("<h1>Welcome to Keeper App! </h1>");
+   res.send("<h1>Welcome to Note Keeper! </h1>");
 })
 
 const PORT = process.env.PORT || 5000;
